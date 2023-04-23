@@ -15,7 +15,7 @@ from PIL import Image
 import cv2
 import numpy as np
 from tensorflow.compat.v1 import ConfigProto
-from tensorflow.compat.v1 import InteractiveSession
+#from tensorflow.compat.v1 import InteractiveSession
 import time
 
 flags.DEFINE_string('framework', 'tf', '(tf, tflite, trt')
@@ -32,7 +32,7 @@ flags.DEFINE_float('score', 0.25, 'score threshold')
 def main(_argv):
     config = ConfigProto()
     config.gpu_options.allow_growth = True
-    session = InteractiveSession(config=config)
+    #session = InteractiveSession(config=config)
     STRIDES, ANCHORS, NUM_CLASS, XYSCALE = utils.load_config(FLAGS)
     input_size = FLAGS.size
     image_path = FLAGS.image
