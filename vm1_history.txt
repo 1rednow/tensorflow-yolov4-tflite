@@ -1,0 +1,154 @@
+    1  vi ~/.bashrc 
+    2  l
+    3  source .bashrc 
+    4  l
+    5  df . -h
+    6  sudo bash -c "echo blacklist nouveau > /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
+    7  groups
+    8  sudo vi /etc/sudoers
+    9  sudo bash -c "echo options nouveau modeset=0 >> /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
+   10  apt-cache search libglv
+   11  sudo apt update
+   12  sudo vi /etc/resolv.conf 
+   13  sudo reboot
+   14  l
+   15  lsmod
+   16  sudo apt install nvidia-driver-525
+   17  l
+   18  scp /boot/initrd.img-5.15.0-69-generic ewaol@192.168.68.84:/usr/share/guest-vms/ewaol-guest-vm1/.
+   19  vi update-initrd.sh
+   20  l
+   21  chmod +x update-initrd.sh 
+   22  ./update-initrd.sh 
+   23  sudo reboot
+   24  nvidia-smi
+   25  sudo dpkg -l | grep nvidia
+   26  cd /usr/local/
+   27  l
+   28  cd
+   29  mkdir Downloads
+   30  cd Downloads/
+   31  l
+   32  wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/sbsa/cuda-ubuntu2204.pin
+   33  sudo mv cuda-ubuntu2204.pin /etc/apt/preferences.d/cuda-repository-pin-600
+   34  wget https://developer.download.nvidia.com/compute/cuda/12.1.0/local_installers/cuda-repo-ubuntu2204-12-1-local_12.1.0-530.30.02-1_arm64.deb
+   35  sudo dpkg -i cuda-repo-ubuntu2204-12-1-local_12.1.0-530.30.02-1_arm64.deb
+   36  sudo cp /var/cuda-repo-ubuntu2204-12-1-local/cuda-*-keyring.gpg /usr/share/keyrings/
+   37  sudo apt-get update
+   38  sudo apt-get -y install cuda
+   39  l
+   40  cd
+   41  l
+   42  ./update-initrd.sh 
+   43  sudo reboot
+   44  exit
+   45  ssh-keygen
+   46  cd
+   47  cd .ssh/
+   48  l
+   49  vi authorized_keys
+   50  exit
+   51  nvidia-smi
+   52  ls
+   53  mkdir dev
+   54  cd dev
+   55  git clone https://github.com/ARM-software/Tool-Solutions.git
+   56  cd Tool-Solutions/docker/
+   57  ls
+   58  cd tensorflow-aarch64/
+   59  ls
+   60  ./build.sh --build-type tensorflow
+   61  ip a
+   62  sudo apt-get update
+   63  sudo apt-get install     ca-certificates     curl     gnupg
+   64  echo   "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+   65    "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" |   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+   66  sudo apt-get update
+   67  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+   68  sudo apt-get update
+   69  sudo chmod 755 /etc/apt/keyrings
+   70  sudo chmod a+r /etc/apt/keyrings/docker.gpg
+   71  sudo install -m 0755 -d /etc/apt/keyrings
+   72  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+   73  sudo chmod a+r /etc/apt/keyrings/docker.gpg
+   74  ls /etc/apt/keyrings/docker.gpg
+   75  V
+   76  sudo apt-get update
+   77  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+   78  sudo docker run hello-world
+   79  docker run hello-world
+   80  sudo groupadd docker
+   81  groups
+   82  sudo usermod -aG docker ${USER}
+   83  groups
+   84  nvidia-smi 
+   85  cd /usr/local/
+   86  l
+   87  vi ~/.bashrc 
+   88  l cuda-12.1/
+   89  vi ~/.bashrc 
+   90  l cuda-12.1/lib64/
+   91  su mentor
+   92  source ~/.bashrc 
+   93  vi ~/.bashrc 
+   94  l /usr/local/cuda-12.1/bin/
+   95  vi ~/.bashrc 
+   96  source ~/.bashrc 
+   97  su mentor
+   98  l
+   99  nvcc --version
+  100  cd
+  101  cd Downloads/
+  102  l
+  103  wget https://developer.nvidia.com/downloads/compute/cudnn/secure/8.9.0/local_installers/12.x/cudnn-local-repo-ubuntu2204-8.9.0.131_1.0-1_arm64.deb/
+  104  ifconfig
+  105  mv ~/cudnn-local-repo-ubuntu2204-8.9.0.131_1.0-1_arm64.deb .
+  106  l
+  107  sudo dpkg -i cudnn-local-repo-ubuntu2204-8.9.0.131_1.0-1_arm64.deb 
+  108  sudo cp /var/cudnn-local-repo-ubuntu2204-8.9.0.131/cudnn-local-556F60CB-keyring.gpg /usr/share/keyrings/
+  109  sudo dpkg -i cudnn-local-repo-ubuntu2204-8.9.0.131_1.0-1_arm64.deb 
+  110  dpkg -l | grep nvidia
+  111  dpkg -l | grep cuda
+  112  l
+  113  sudo apt install -y xfce4 xfce4-goodies net-tools kmod pciutils
+  114  sudo apt install -y tigervnc-standalone-server tigervnc-common tigervnc-tools
+  115  vncserver -geometry 1920x1080 -localhost no
+  116  ifconfig
+  117  l
+  118  sudo apt install mesa-utils
+  119  glxgears
+  120  glxinfo | more
+  121  sudo apt install glx2
+  122  apt-cache search glx
+  123  glxgears
+  124  docker container list
+  125  ls
+  126  cd dev
+  127  ls
+  128  ls -rtlah
+  129  cd tflite_benchmark/
+  130  ls
+  131  ls -rtlah
+  132  mv tflite_result.jpg tflite_result.jpg.backup
+  133  ls -rtlah
+  134  echo $DISPLAY
+  135  ls
+  136  cd dev
+  137  ls
+  138  git clone https://github.com/hunglc007/tensorflow-yolov4-tflite.git
+  139  cd tensorflow-yolov4-tflite/
+  140  ls
+  141  wget https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.weights
+  142  wget https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v4_pre/yolov4-tiny.weights
+  143  mkdir checkpoints
+  144  eog result.png 
+  145  sudo apt install eog
+  146  ip a
+  147  pwd
+  148  ls -rtlah
+  149  git remote show origin
+  150  docker images
+  151  vim benchmark_new.py 
+  152  ls -rtlah
+  153  htop
+  154  history > vm1_history.txt

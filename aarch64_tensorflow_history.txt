@@ -1,0 +1,117 @@
+    1  ls
+    2  cd /home/dev/
+    3  ls
+    4  cd tflite_benchmark/
+    5  ls
+    6  python3 tflite_benchmark.py 
+    7  sudo TF_ENABLE_ONEDNN_OPTS=0 python3 tflite_benchmark.py 
+    8   TF_ENABLE_ONEDNN_OPTS=0 python3 tflite_benchmark.py 
+    9  ls -rtlah
+   10  eog tflite_result.jpg 
+   11  apt install eog
+   12  sudo apt install eog
+   13  sudo apt update
+   14  sudo apt install eog
+   15  eog tflite_result.jpg.backup 
+   16  python3 tflite_benchmark.py 
+   17  ls -rtlah
+   18  cd ..
+   19  chmod o+w tflite_benchmark/
+   20  sudo chmod o+w tflite_benchmark/
+   21  ls -rtlah
+   22  cd tflite_benchmark/
+   23  python3 tflite_benchmark.py 
+   24  python3 tflite_benchmark.py 
+   25  cd ..
+   26  ls
+   27  cd tensorflow-yolov4-tflite/
+   28  ls
+   29  python save_model.py --weights .yolov4-tiny.weights --output ./checkpoints/yolov4-tiny-416 --input_size 416 --model yolov4 --tiny
+   30  pip -V
+   31  pip3 -V
+   32  pip3 install lxml tqdm opencv-python absl-py easydict matplotlib pillow
+   33  python save_model.py --weights .yolov4-tiny.weights --output ./checkpoints/yolov4-tiny-416 --input_size 416 --model yolov4 --tiny
+   34  ls /usr/lib/aarch64-linux-gnu/libgomp.so.1
+   35  export LD_PRELOAD=/usr/lib/aarch64-linux-gnu/libgomp.so.1 python save_model.py --weights .yolov4-tiny.weights --output ./checkpoints/yolov4-tiny-416 --input_size 416 --model yolov4 --tiny
+   36  LD_PRELOAD=/usr/lib/aarch64-linux-gnu/libgomp.so.1 python save_model.py --weights .yolov4-tiny.weights --output ./checkpoints/yolov4-tiny-416 --input_size 416 --model yolov4 --tiny
+   37  ls
+   38  vim save_model.py 
+   39  vim save_model.py 
+   40  sudo vim save_model.py 
+   41  python save_model.py --weights .yolov4-tiny.weights --output ./checkpoints/yolov4-tiny-416 --input_size 416 --model yolov4 --tiny
+   42  vim core/utils.py 
+   43  vim save_model.py 
+   44  vim core/yolov4.py 
+   45  sudo vim core/yolov4.py 
+   46  python save_model.py --weights .yolov4-tiny.weights --output ./checkpoints/yolov4-tiny-416 --input_size 416 --model yolov4 --tiny
+   47  ls
+   48  python save_model.py --weights ./yolov4-tiny.weights --output ./checkpoints/yolov4-tiny-416 --input_size 416 --model yolov4 --tiny
+   49  cd ..
+   50  sudo chmod -R 766 tensorflow-yolov4-tflite/
+   51  cd -
+   52  sudo chmod -R 777 tensorflow-yolov4-tflite/
+   53  cd -
+   54  python save_model.py --weights ./yolov4-tiny.weights --output ./checkpoints/yolov4-tiny-416 --input_size 416 --model yolov4 --tiny
+   55  python detect.py --weights ./checkpoints/yolov4-tiny-416 --size 416 --model yolov4 --image ./data/kite.jpg --tiny
+   56  vim detect.py 
+   57  vim detect.py 
+   58  python detect.py --weights ./checkpoints/yolov4-tiny-416 --size 416 --model yolov4 --image ./data/kite.jpg --tiny
+   59  vim /home/dev/tensorflow-yolov4-tflite/core/utils.py
+   60  python detect.py --weights ./checkpoints/yolov4-tiny-416 --size 416 --model yolov4 --image ./data/kite.jpg --tiny
+   61  ls -rtlah
+   62  python benchmarks.py --size 416 --model yolov4 --weights ./yolov4-tiny.weights
+   63  vim benchmarks.py 
+   64  python benchmarks.py --size 416 --model yolov4 --weights ./yolov4-tiny.weights
+   65  vim benchmarks.py 
+   66  python benchmarks.py --size 416 --model yolov4 --weights ./yolov4-tiny.weights
+   67  vim benchmarks.py 
+   68  python benchmarks.py --size 416 --model yolov4 --weights ./yolov4-tiny.weights
+   69  vim benchmarks.py 
+   70  python benchmarks.py --size 416 --model yolov4 --weights ./yolov4-tiny.weights --tiny
+   71  vim benchmarks.py 
+   72  python benchmarks.py --size 416 --model yolov4 --weights ./yolov4-tiny.weights --tiny
+   73  vim benchmarks.py 
+   74  vim benchmarks.py 
+   75  python benchmarks.py --size 416 --model yolov4 --weights ./yolov4-tiny.weights --tiny
+   76  vim benchmarks.py 
+   77  python benchmarks.py --size 416 --model yolov4 --weights ./yolov4-tiny.weights --tiny
+   78  vim core/utils.py 
+   79  cp detect.py benchmark_new.py
+   80  vim benchmark_new.py 
+   81  vim benchmark_new.py 
+   82  python benchmark_new.py --size 416 --model yolov4 --weights yolov4-tiny.weights --tiny
+   83  vim benchmark_new.py 
+   84  python benchmark_new.py --size 416 --model yolov4 --weights yolov4-tiny.weights --tiny
+   85  python benchmark_new.py --size 416 --model yolov4 --weights checkpoints/yolov4-tiny-416/ --tiny
+   86  nvidia-smi
+   87  vim benchmark_new.py 
+   88  python benchmark_new.py --size 416 --model yolov4 --weights checkpoints/yolov4-tiny-416/ --tiny
+   89  vim benchmark_new.py 
+   90  python benchmark_new.py --size 416 --model yolov4 --weights checkpoints/yolov4-tiny-416/ --tiny
+   91  python save_model.py --weights ./yolov4-tiny.weights --output ./checkpoints/yolov4-tiny-416 -for-tflite--input_size 416 --model yolov4 --framework tflite
+   92  python save_model.py --weights ./yolov4-tiny.weights --output ./checkpoints/yolov4-tiny-416 -for-tflite --input_size 416 --model yolov4 --framework tflite
+   93  python save_model.py --weights ./yolov4-tiny.weights --output ./checkpoints/yolov4-tiny-416-for-tflite --input_size 416 --model yolov4 --framework tflite
+   94  python save_model.py --weights ./yolov4-tiny.weights --output ./checkpoints/yolov4-tiny-416-for-tflite --input_size 416 --model yolov4 --framework tflite --tiny
+   95  ls -rtlah ./checkpoints/yolov4-tiny-416-for-tflite/assets
+   96  python convert_tflite.py --weights ./checkpoints/yolov4-tiny-416-for-tflite --output ./checkpoints/yolov4-tiny-416.tflite
+   97  vim convert_tflite.py 
+   98  python convert_tflite.py --weights ./checkpoints/yolov4-tiny-416-for-tflite --output ./checkpoints/yolov4-tiny-416.tflite
+   99  vim convert_tflite.py 
+  100  python convert_tflite.py --weights ./checkpoints/yolov4-tiny-416-for-tflite --output ./checkpoints/yolov4-tiny-416.tflite
+  101  python convert_tflite.py --weights ./checkpoints/yolov4-tiny-416-for-tflite --output ./checkpoints/yolov4-tiny-416.tflite
+  102  vim convert_tflite.py 
+  103  python convert_tflite.py --weights ./checkpoints/yolov4-tiny-416-for-tflite --output ./checkpoints/yolov4-tiny-416.tflite --quantize_mode float16
+  104  ls -rtlah checkpoints/
+  105  mv yolov4-tiny-416.tflite yolov4-tiny-416-fp16.tflite
+  106  mv checkpoints/yolov4-tiny-416.tflite checkpoints/yolov4-tiny-416-fp16.tflite
+  107  python detect.py --weights checkpoints/yolov4-tiny-416-fp16.tflite --tiny --size 416 --model yolov4 --image ./data/kite.jpg --framework tflite
+  108  vim detect.py 
+  109  cp detect.py detect_with_benchmark.py
+  110  vim detect_with_benchmark.py 
+  111  python detect_with_benchmark.py --weights checkpoints/yolov4-tiny-416-fp16.tflite --tiny --size 416 --model yolov4 --image ./data/kite.jpg --framework tflite
+  112  vim detect_with_benchmark.py 
+  113  python detect_with_benchmark.py --weights checkpoints/yolov4-tiny-416-fp16.tflite --tiny --size 416 --model yolov4 --image ./data/kite.jpg --framework tflite
+  114  python benchmark_new.py --size 416 --model yolov4 --weights checkpoints/yolov4-tiny-416/ --tiny
+  115  python detect_with_benchmark.py --weights checkpoints/yolov4-tiny-416-fp16.tflite --tiny --size 416 --model yolov4 --image ./data/kite.jpg --framework tflite
+  116  ls
+  117  history > aarch64_tensorflow_history.txt
