@@ -1,8 +1,9 @@
-import tensorflow as tf
+#import tensorflow as tf
 from absl import app, flags, logging
 from absl.flags import FLAGS
 import numpy as np
 import cv2
+import tensorflow as tf
 from core.yolov4 import YOLOv4, YOLOv3, YOLOv3_tiny, decode
 import core.utils as utils
 import os
@@ -29,7 +30,7 @@ def representative_data_gen():
 
 def save_tflite():
   converter = tf.lite.TFLiteConverter.from_saved_model(FLAGS.weights)
-
+  converter.experimental_enable_resource_variables = True
   if FLAGS.quantize_mode == 'float16':
     converter.optimizations = [tf.lite.Optimize.DEFAULT]
     converter.target_spec.supported_types = [tf.compat.v1.lite.constants.FLOAT16]
