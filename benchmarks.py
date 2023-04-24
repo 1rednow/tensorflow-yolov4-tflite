@@ -1,7 +1,7 @@
 import numpy as np
-import tensorflow as tf
 import time
 import cv2
+import tensorflow as tf
 from core.yolov4 import YOLOv4, YOLOv3_tiny, YOLOv3, decode
 from absl import app, flags, logging
 from absl.flags import FLAGS
@@ -45,10 +45,17 @@ def main(_argv):
             feature_maps = YOLOv3_tiny(input_layer, NUM_CLASS)
             bbox_tensors = []
             for i, fm in enumerate(feature_maps):
-                bbox_tensor = decode(fm, NUM_CLASS, i)
+                #if i == 0:
+                #    output_tensors = decode(fm, input_size // 16, NUM_CLASS, STRIDES, ANCHORS, i, XYSCALE, FLAGS.framework)
+                #else:
+                #    output_tensors = decode(fm, input_size // 32, NUM_CLASS, STRIDES, ANCHORS, i, XYSCALE, FLAGS.framework)
+                #bbox_tensors.append(output_tensors[0])
+                #bbox_tensor = decode(fm, NUM_CLASS, i)
+                bbox_tensor = decode(fm, cfg.TRAIN.INPUT_SIZE // 16, NUM_CLASS, STRIDES, ANCHORS, i)
                 bbox_tensors.append(bbox_tensor)
             model = tf.keras.Model(input_layer, bbox_tensors)
-            utils.load_weights_tiny(model, FLAGS.weights)
+            #utils.load_weights_tiny(model, FLAGS.weights)
+            utils.load_weights(model, FLAGS.weights, is_tiny=True)
         else:
             if FLAGS.model == 'yolov3':
                 feature_maps = YOLOv3(input_layer, NUM_CLASS)

@@ -2,8 +2,8 @@
 # coding=utf-8
 
 import numpy as np
-import tensorflow as tf
 import core.utils as utils
+import tensorflow as tf
 import core.common as common
 import core.backbone as backbone
 from core.config import cfg
